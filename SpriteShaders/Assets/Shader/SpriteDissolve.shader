@@ -2,19 +2,18 @@
 {
     Properties
     {
+        //Texture properties
 		_ColorStart ("Color Start", Color) = (1,1,1,1)
-		_ColorEnd ("Color End", Color) = (1,1,1,1)
-        _ColorSpeed("Color Speed", Range(0, 1)) = 1
-
         _MainTex ("Texture", 2D) = "white" {}
+		[PerRendererData]_ColorEnd ("Color End", Color) = (1,1,1,1)
 
         //Dissolve properties
 		_DissolveTexture("Dissolve Texutre", 2D) = "white" {} 
-		_Amount("Amount", Range(0,1)) = 0
+		[PerRendererData]_Amount("Amount", Range(0,1)) = 0
     }
     SubShader
     {
-        		Tags{ "RenderType"="Transparent" "Queue"="Transparent"}
+        Tags{ "RenderType"="Transparent" "Queue"="Transparent"}
 
 		Blend SrcAlpha OneMinusSrcAlpha
 		ZWrite off
@@ -53,19 +52,21 @@
 		    //Dissolve properties
 		    sampler2D _DissolveTexture;
 		    half _Amount;
-		    half _Blend;
-		    half _ColorSpeed;
+
+            //Texture properties
             sampler2D _MainTex;
     		fixed4 _ColorStart;
     		fixed4 _ColorEnd;
 
             fixed4 frag (v2f i) : SV_Target
             {
-                //Dissolve function
+			    fixed4 baseColor = tex2D(_MainTex, i.uv) * _ColorStart;
+
+                // Dissolve function
 			    half dissolve_value = tex2D(_DissolveTexture, i.uv).r;
 			    clip(dissolve_value - _Amount);
 
-                fixed4 col = tex2D(_MainTex, i.uv) * lerp(_ColorStart, _ColorEnd, _Amount * (_ColorSpeed + 1));
+                fixed4 col = lerp(baseColor, _ColorEnd, _Amount);
 
                 return col;
             }
