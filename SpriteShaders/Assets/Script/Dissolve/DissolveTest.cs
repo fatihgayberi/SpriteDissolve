@@ -7,17 +7,28 @@ namespace Wonnasmith
     public class DissolveTest : MonoBehaviour
     {
         [SerializeField] private DissolveController dissolveController;
-        [SerializeField] private bool isDissolveTest;
+        [SerializeField] private bool isDissolveStart;
+        [SerializeField] private bool isDissolveStop;
 
         private void Update()
         {
-            if (isDissolveTest)
+            if (isDissolveStart)
             {
-                isDissolveTest = false;
+                isDissolveStart = false;
 
                 if (dissolveController != null)
                 {
                     dissolveController.Dissolve();
+                }
+            }
+
+            if (isDissolveStop)
+            {
+                isDissolveStop = false;
+
+                if (dissolveController != null)
+                {
+                    dissolveController.DissolveReset();
                 }
             }
         }

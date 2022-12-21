@@ -17,6 +17,38 @@ namespace Wonnasmith
         private float _currentAmount;
         private float _elapsedTime = 0;
 
+        private const string strAmount = "_Amount";
+        private const string strColorStart = "_ColorStart";
+        private const string strColorEnd = "_ColorEnd";
+
+        public void DissolveReset()
+        {
+            if (spriteRenderer == null)
+            {
+                return;
+            }
+
+            if (_materialPropertyBlock == null)
+            {
+                _materialPropertyBlock = new MaterialPropertyBlock();
+            }
+
+            if (_dissolveCoroutine != null)
+            {
+                StopCoroutine(_dissolveCoroutine);
+            }
+
+            _currentAmount = 0;
+            _elapsedTime = 0;
+
+            _materialPropertyBlock.SetColor(strColorStart, Color.white);
+            _materialPropertyBlock.SetFloat(strAmount, 0);
+
+            spriteRenderer.SetPropertyBlock(_materialPropertyBlock);
+
+        }
+
+
         public void Dissolve()
         {
             if (spriteRenderer == null)
@@ -30,9 +62,10 @@ namespace Wonnasmith
             }
 
             _currentAmount = 0;
+            _elapsedTime = 0;
 
-            _materialPropertyBlock.SetColor("_ColorEnd", endColor);
-            _materialPropertyBlock.SetFloat("_Amount", _currentAmount);
+            _materialPropertyBlock.SetColor(strColorEnd, endColor);
+            _materialPropertyBlock.SetFloat(strAmount, _currentAmount);
 
             spriteRenderer.SetPropertyBlock(_materialPropertyBlock);
 
@@ -48,7 +81,7 @@ namespace Wonnasmith
 
                 _elapsedTime += Time.deltaTime;
 
-                _materialPropertyBlock.SetFloat("_Amount", _currentAmount);
+                _materialPropertyBlock.SetFloat(strAmount, _currentAmount);
                 spriteRenderer.SetPropertyBlock(_materialPropertyBlock);
 
                 yield return null;
