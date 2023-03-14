@@ -7,9 +7,9 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Wonnasmith_SpriteOutline
-  m_Shader: {fileID: 4800000, guid: 99f96ea54cf878d48a3304a471b1984f, type: 3}
-  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
+  m_Name: Wonnasmith_SpriteElectrical
+  m_Shader: {fileID: 4800000, guid: 3ab594427fee3b4438f74c65b65437de, type: 3}
+  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA _EFFECTACTIVE_ON _ISOUTLINEACTIVE_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -19,6 +19,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _BackgroundTex:
+        m_Texture: {fileID: 2800000, guid: 315966f56fb96734cb2f52849a7d6fba, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _BumpMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -39,11 +43,19 @@ Material:
         m_Texture: {fileID: 2800000, guid: bf6c8e4c55ec6eb43a9bceb67b3fd8bc, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Electrical:
+        m_Texture: {fileID: 2800000, guid: d494490c2f7c57548b366eaafff8a5a8, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _EmissionMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 6f0160d50f2a8084f928e75e985be88d, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex2:
         m_Texture: {fileID: 2800000, guid: 830fdb62033c3534abd69056f4ba4ac0, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -59,35 +71,72 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Pattern:
+        m_Texture: {fileID: 2800000, guid: 65e7cc0e194d598488f529917e9a4762, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Rock:
+        m_Texture: {fileID: 2800000, guid: c35c95bed2c57a34599590da75308693, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Scelton:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Skeleton:
+        m_Texture: {fileID: 2800000, guid: 5be2d4a49264eb742ab047f1c387aedf, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SkeletonTex:
+        m_Texture: {fileID: 2800000, guid: c35c95bed2c57a34599590da75308693, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Floats:
     - _Amount: 0
     - _Blend: 0
     - _BumpScale: 1
+    - _ColorEnd: 0.852
     - _ColorSpeed: 0
+    - _ColorStart: 0.322
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
+    - _EffectActive: 1
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _Metallic: 0
+    - _MipSampleLevel: 1
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _PixelSize: 5
-    - _Rate: 2
+    - _Rate: 1.9
     - _Res: 640.03
+    - _SkeletonPercent: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _Speed: 5
     - _SrcBlend: 1
+    - _TextureRate: 1
     - _UVSec: 0
+    - _WaveSpeed: 0.5
+    - _Won: 1
+    - _WonWon: 1
+    - _WonWon1: 0.5
+    - _WonWon2: 1
+    - _WonWon3: 1
+    - _WonWon4: 1
+    - _WonWon5: 0.5
     - _ZWrite: 1
     - _isBending: 0
     - _isOutlineActive: 1
     - _pixelsPerUnit: 1024
     m_Colors:
+    - _Col: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 0.986397, g: 1, b: 0, a: 1}
+    - _ColorA: {r: 0, g: 0.24705882, b: 0.7490196, a: 1}
+    - _ColorB: {r: 0.24313726, g: 0.7490196, b: 0.0627451, a: 1}
     - _ColorEnd: {r: 0, g: 0.009654045, b: 1, a: 1}
     - _ColorStart: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}

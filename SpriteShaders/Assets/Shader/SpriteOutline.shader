@@ -3,9 +3,11 @@
     Properties
     {
         _MainTex ("Texture", 2D) = "white" {}
-        _Color ("Color", Color) =  (1, 1, 1, 1)
 		_Rate ("Rate", Range(0,5)) = 0.5
 		_Speed ("Speed", Range(0,5)) = 0.5
+
+        [PerRendererData]_Color ("Color", Color) =  (1, 0, 0, 1)
+	    [PerRendererData]_isOutlineActive("Outline Active", Float) = 0
     }
     SubShader
     {
@@ -46,6 +48,7 @@
             fixed4 _MainTex_TexelSize;
 		    half _Rate;
 		    half _Speed;
+		    half _isOutlineActive;
             sampler2D _MainTex;
 
             fixed4 frag (v2f i) : COLOR
@@ -58,7 +61,7 @@
 
                 outlineC.rgb *= outlineC.a;
 
-                half _rateSin = _Rate + cos(_Time.y * _Speed);
+                half _rateSin = _isOutlineActive * (_Rate + (sin(_Time.y * _Speed) * 0.5 + 0.5));
 
                 fixed upAlpha = tex2D(_MainTex, i.uv + fixed2(0, _rateSin * _MainTex_TexelSize.y)).a;
                 fixed downAlpha = tex2D(_MainTex, i.uv - fixed2(0, _rateSin * _MainTex_TexelSize.y)).a;
