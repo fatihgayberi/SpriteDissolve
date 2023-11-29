@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Wonnasmith
+namespace Wonnasmith.Outline
 {
     [Serializable]
     public class OutlineTest : MonoBehaviour

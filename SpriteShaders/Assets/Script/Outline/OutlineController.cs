@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Wonnasmith
+namespace Wonnasmith.Outline
 {
     public class OutlineController : MonoBehaviour
     {

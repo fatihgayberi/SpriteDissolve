@@ -2,20 +2,25 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Wonnasmith_WaterReflection
-  m_Shader: {fileID: 4800000, guid: e109b17f7ad9c1b47a300865b2ed4393, type: 3}
-  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
+  m_Name: Wonnasmith_TextureClear
+  m_Shader: {fileID: 4800000, guid: e966ecc1d8862e54dae4cbec35ec005a, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - ETC1_EXTERNAL_ALPHA
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
+  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -43,12 +48,12 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _InputTex:
-        m_Texture: {fileID: 8400000, guid: 2b678a64e35fba84fa3d182d7d514481, type: 2}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 830fdb62033c3534abd69056f4ba4ac0, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 8400000, guid: 2b678a64e35fba84fa3d182d7d514481, type: 2}
+    - _MaskTex:
+        m_Texture: {fileID: 2800000, guid: b82fb55f45d7ab24b902b09e306ecfd1, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -63,12 +68,9 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _WaterNoiseTex:
-        m_Texture: {fileID: 2800000, guid: dbf69272cfaef834aa5cf22afdf81ae3, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
-    - _Amount: 0
+    - _Amount: 1
     - _Blend: 0
     - _BumpScale: 1
     - _ColorSpeed: 0
@@ -80,36 +82,26 @@ Material:
     - _GlossyReflections: 1
     - _Metallic: 0
     - _Mode: 0
-    - _NoiseThreshold: 1.393
-    - _NoiseThresholdMax: 0.893
-    - _NoiseThresholdMin: 1.013
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _PixelSize: 5
     - _Rate: 2
-    - _ReflectionWaveSpeed: 4
     - _Res: 640.03
-    - _ScrollXSpeed: -0.042
-    - _ScrollYSpeed: -0.038
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _Speed: 5
     - _SrcBlend: 1
     - _UVSec: 0
-    - _WaterWaveSpeed: 1
-    - _WaveSpeed: 10
     - _ZWrite: 1
     - _isBending: 0
     - _isOutlineActive: 1
     - _pixelsPerUnit: 1024
     m_Colors:
     - _Color: {r: 0.986397, g: 1, b: 0, a: 1}
-    - _Color1: {r: 1, g: 0, b: 0, a: 1}
-    - _Color2: {r: 0.38614988, g: 1, b: 0, a: 1}
     - _ColorEnd: {r: 0, g: 0.009654045, b: 1, a: 1}
     - _ColorStart: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpritePivot: {r: 0.5, g: 0.5, b: 0, a: 0.09}
     - _SpriteUV: {r: 0.1, g: 0.14583333, b: 0.015625, a: 0.8375}
     - _UVCenter: {r: 0.0421875, g: 1.1, b: 0, a: 0}
-    - _WaterColor: {r: 0.28996083, g: 0.3230687, b: 0.33962262, a: 0.4627451}
+  m_BuildTextureStacks: []

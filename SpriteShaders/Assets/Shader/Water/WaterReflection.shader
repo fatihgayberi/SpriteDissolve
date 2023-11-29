@@ -1,4 +1,6 @@
-﻿Shader "Wonnasmith/Water/WaterReflection"
+﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
+Shader "Wonnasmith/Water/WaterReflection"
 {
     Properties
     {
@@ -10,8 +12,8 @@
 
         _NoiseThresholdMin("Noise ThresholdMin", Range(0,2)) = 0.01
         _NoiseThresholdMax("Noise ThresholdMax", Range(0,2)) = 0.01
-        _ScrollXSpeed("_Scroll Speed X", Range(0,1)) = 0.01
-        _ScrollYSpeed("_Scroll Speed Y", Range(0,1)) = 0.01
+        _ScrollXSpeed("_Scroll Speed X", Range(-1,1)) = 0.01
+        _ScrollYSpeed("_Scroll Speed Y", Range(-1,1)) = 0.01
     }
     SubShader
     {
@@ -26,8 +28,6 @@
             #pragma fragment frag
 
             #include "UnityCG.cginc"
-
-            #define TAU 6.28318530718
 
             struct appdata
             {
@@ -61,6 +61,7 @@
                 v2f o;
                 o.vertex = UnityObjectToClipPos(v.vertex);
                 o.uv = TRANSFORM_TEX(v.uv, _MainTex);
+                // o.uv = mul(unity_ObjectToWorld, v.vertex);
 
                 return o;
             }
