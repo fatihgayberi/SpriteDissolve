@@ -87,16 +87,16 @@ Material:
     - _Metallic: 0
     - _Mode: 0
     - _NoiseThreshold: 1.393
-    - _NoiseThresholdMax: 0.893
-    - _NoiseThresholdMin: 1.013
+    - _NoiseThresholdMax: 1.25
+    - _NoiseThresholdMin: 0.62
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _PixelSize: 5
     - _Rate: 2
     - _ReflectionWaveSpeed: 4
     - _Res: 640.03
-    - _ScrollXSpeed: -0.042
-    - _ScrollYSpeed: -0.038
+    - _ScrollXSpeed: -0.13
+    - _ScrollYSpeed: 0.33
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _Speed: 5
